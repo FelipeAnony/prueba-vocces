@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #ccc;
+  width: 100%;
+  max-width: 700px;
+  min-height: 400px;
+  max-height: 430px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px 1px #ccc;
+  padding: 10px 20px;
+  margin: 15px auto;
+}
+
+.productCard__title {
+  margin-bottom: 10px;
+}
+
+.productCard__imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 240px;
+}
+
+.productCard__info,
+.productCard__infoDown {
+  display: flex;
+  flex-direction: column;
+}
+
+.productCard__description {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.productCard__discount {
+  margin-bottom: 10px;
+  color: green;
+} 
+
+.productCard__price {
+  margin-bottom: 5px;
+}
+
+.productCard__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.productCard__verMasBtn,
+.productCard__contactarBtn {
+  width: 45%;
+  padding: 6px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+}
+
+.productCard__verMasBtn:hover,
+.productCard__contactarBtn:hover {
+  opacity: .9;
+}
+
+.productCard__contactarBtn {
+  background-color: rgb(68, 129, 242);
+  color: white
+}
+
+.productCard__verMasBtn {
+  background-color: #aaa;
+  color: white;
+}
+
+@media (min-width: 600px) {
+  .productCard {
+    display: grid;
+    grid-template-rows: 20px 1fr;
+    grid-template-columns: 300px 1fr;
+    row-gap: 10px;
+    grid-template-areas: 
+      'title title'
+      'image info';
+  }
+
+  .productCard__title {
+    grid-area: title;
+    text-align: center;
+  }
+
+  .productCard__imgContainer {
+    grid-area: image;
+    align-self: center;
+    padding-right: 5px;
+  }
+
+  .productCard__info {
+    margin:40px 0;
+    grid-area: info;
+    justify-content: space-between;
+    border-left: solid 1px #ccc;
+    padding-left: 10px;
+  } 
+
+}

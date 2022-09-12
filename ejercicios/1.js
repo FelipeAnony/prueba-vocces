@@ -17,9 +17,9 @@ function findUniq(array) {
 
   for (let key in itemsCount) {
     if (itemsCount[key] === 1) {
-      // la funcion podria acabar con un 'return key'.
-      // Esto abajo es para garantizar que devuelva el elemento original,
-      // de modo que su tipo de dato no sea alterado de 1 para '1' por ejemplo.
+      // la funcion podria acabar con un 'return key' si el tipo esperado de return no importar.
+      // Esto abajo es para garantizar que devuelve el elemento original, de modo que su tipo
+      // de dato no sea alterado de 1 para '1' y pueda  cumplir exactamente con el expect.
 
       const originalArrayItem = array.find((e) => e == key);
       return originalArrayItem;
