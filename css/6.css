@@ -76,6 +76,7 @@ img {
   cursor: pointer;
   border: none;
   border-radius: 3px;
+  color: white
 }
 
 .productCard__verMasBtn:hover,
@@ -83,14 +84,12 @@ img {
   opacity: .9;
 }
 
-.productCard__contactarBtn {
-  background-color: rgb(68, 129, 242);
-  color: white
-}
-
 .productCard__verMasBtn {
   background-color: #aaa;
-  color: white;
+}
+
+.productCard__contactarBtn {
+  background-color: rgb(68, 129, 242);
 }
 
 @media (min-width: 600px) {
@@ -122,5 +121,4 @@ img {
     border-left: solid 1px #ccc;
     padding-left: 10px;
   } 
-
 }

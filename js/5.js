@@ -3,23 +3,6 @@ const usersContainer = document.getElementById('usersContainer');
 const HtmlToRender = [];
 let usersData = [];
 
-const renderIndividualUser = (id) => {
-  const user = usersData[id];
-
-  usersContainer.innerHTML = `
-  <div class='users__userInfo'>
-    <button id='backButton' class='users__backButton'> < Volver </button>
-    <span class='users__infoField'><b>Nombre</b>: ${user.name}</span>
-    <span class='users__infoField'><b>Email:</b> ${user.email}</span>
-    <span class='users__infoField'><b>Teléfono:</b> ${user.phone}</span>
-    <span class='users__infoField'><b>Sitio web:</b> ${user.website}</span>
-    <span class='users__infoField'><b>City:</b> ${user.address.city}</span>
-  </div>
-  `;
-
-  document.getElementById('backButton').addEventListener('click', renderUsers);
-};
-
 const addEventListenerAll = () => {
   HtmlToRender.forEach((e, i) => {
     document
@@ -41,6 +24,23 @@ const renderUsers = () => {
   addEventListenerAll();
 };
 
+const renderIndividualUser = (id) => {
+  const user = usersData[id];
+
+  usersContainer.innerHTML = `
+    <div class='users__userInfo'>
+      <button id='backButton' class='users__backButton'> < Volver </button>
+      <span class='users__infoField'><b>Nombre</b>: ${user.name}</span>
+      <span class='users__infoField'><b>Email:</b> ${user.email}</span>
+      <span class='users__infoField'><b>Teléfono:</b> ${user.phone}</span>
+      <span class='users__infoField'><b>Sitio web:</b> ${user.website}</span>
+      <span class='users__infoField'><b>City:</b> ${user.address.city}</span>
+    </div>
+    `;
+
+  document.getElementById('backButton').addEventListener('click', renderUsers);
+};
+
 const renderError = () => {
   usersContainer.innerHTML =
     "<span class='users__error'>Lo sentimos! Ocurrió un error.</span>";
@@ -57,4 +57,4 @@ const loadUsers = async () => {
   }
 };
 
-document.getElementById('root').addEventListener('load', loadUsers());
+document.addEventListener('DOMContentLoaded', loadUsers);

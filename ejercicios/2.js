@@ -22,7 +22,8 @@ function numbersTop(array) {
     for (let key in itemsCount) {
       if (itemsCount[key] === e) {
         // Asi como en la prueba anterior, opté por utilizar find en el array
-        // original para mantener los tipos de datos originales
+        // original para mantener los tipos de datos originales y cumplir exactamente el expect,
+        // pero tambiem podria terminar de manera mas corta segun la necesidad
 
         mostRepeatedItens[i] = array.find((el) => el == key);
       }
