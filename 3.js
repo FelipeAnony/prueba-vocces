@@ -5,7 +5,6 @@
 
 function increasedMeasurements(measurements) {
   if (!Array.isArray(measurements)) return null;
-
   let increasedDaysCount = 0;
 
   measurements.forEach((e, i) => {

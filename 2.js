@@ -19,7 +19,7 @@ function numbersTop(array) {
   const mostRepeatedItens = [];
 
   sortedItemsCount.forEach((e, i) => {
-    for (key in itemsCount) {
+    for (let key in itemsCount) {
       if (itemsCount[key] === e) {
         // Asi como en la prueba anterior, opté por utilizar find en el array
         // original para mantener los tipos de datos originales

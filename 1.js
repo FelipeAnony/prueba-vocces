@@ -15,13 +15,13 @@ function findUniq(array) {
     }
   });
 
-  for (let element in itemsCount) {
-    if (itemsCount[element] === 1) {
-      // la funcion podria acabar con un 'return element'.
+  for (let key in itemsCount) {
+    if (itemsCount[key] === 1) {
+      // la funcion podria acabar con un 'return key'.
       // Esto abajo es para garantizar que devuelva el elemento original,
       // de modo que su tipo de dato no sea alterado de 1 para '1' por ejemplo.
 
-      const originalArrayItem = array.find((e) => e == element);
+      const originalArrayItem = array.find((e) => e == key);
       return originalArrayItem;
     }
   }
