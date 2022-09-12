@@ -8,8 +8,6 @@ function findUniq(array) {
   const itemsCount = {};
 
   array.forEach((e) => {
-    if (typeof e === 'string') e = String(e);
-
     if (itemsCount[e]) {
       itemsCount[e]++;
     } else {
