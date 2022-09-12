@@ -1,4 +1,4 @@
-const { increasedMeasurements } = require('../3');
+const { increasedMeasurements } = require('../ejercicios/3');
 
 describe('Prueba 1', () => {
   it('Should return null if the param provided is not an array', () => {

@@ -1,4 +1,4 @@
-const { findUniq } = require('../1');
+const { findUniq } = require('../ejercicios/1');
 
 describe('Prueba 1', () => {
   it('Should return null if the param provided is not an array', () => {
