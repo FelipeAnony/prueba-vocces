@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html id="root" lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 5</title>
+    <link rel="stylesheet" href="../css/5.css"">
     <script src="../js/5.js" defer></script>
   </head>
   <body>
     <article>
-      <h1>Listado de usuarios</h1>
+      <h1 class="title">Listado de usuarios</h1>
       <p>
         Queremos mostrar el listado de usarios que existen en nuestro sistema y
         que al hacer click sobre uno de ellos nos muestre la información del
@@ -22,6 +23,16 @@
           >Users</a
         >.
       </p>
+    </article>
+
+    <article class="users">
+      <header>
+        <h2 class="users__title">Usuarios:</h2>
+      </header>
+
+      <main id="usersContainer">
+        <p class="users__loading">Loading...</p>
+      </main>
     </article>
   </body>
 </html>
