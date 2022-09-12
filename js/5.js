@@ -1,12 +1,7 @@
 const usersContainer = document.getElementById('usersContainer');
 
-const renderedUsersList = [];
+const HtmlToRender = [];
 let usersData = [];
-
-const handleBackButtonClick = () => {
-  backButton.removeEventListener('click', handleBackButtonClick);
-  renderUsers();
-};
 
 const renderIndividualUser = (id) => {
   const user = usersData[id];
@@ -22,37 +17,27 @@ const renderIndividualUser = (id) => {
   </div>
   `;
 
-  document
-    .getElementById('backButton')
-    .addEventListener('click', handleBackButtonClick);
-};
-
-const handleUserClick = (e) => {
-  renderIndividualUser(e.target.id);
+  document.getElementById('backButton').addEventListener('click', renderUsers);
 };
 
 const addEventListenerAll = () => {
-  renderedUsersList.forEach((e, i) => {
+  HtmlToRender.forEach((e, i) => {
     document
       .getElementById(i)
-      .addEventListener('click', (e) => handleUserClick(e));
+      .addEventListener('click', (e) => renderIndividualUser(e.target.id));
   });
 };
 
 const renderUsers = () => {
-  if (usersData.length < 1) {
-    loadUsers();
-  }
-
-  if (renderedUsersList.length < 1) {
+  if (HtmlToRender.length < 1) {
     usersData.forEach((element, i) => {
-      renderedUsersList.push(
+      HtmlToRender.push(
         `<div class='users__individualUser'><span id='${i}' class='users__name'>${element.name}</span></div>`
       );
     });
   }
 
-  usersContainer.innerHTML = renderedUsersList.join(' ');
+  usersContainer.innerHTML = HtmlToRender.join(' ');
   addEventListenerAll();
 };
 
@@ -62,7 +47,6 @@ const renderError = () => {
 };
 
 const loadUsers = async () => {
-  console.log('fui executado');
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     const usersList = await response.json();
