@@ -1,6 +1,6 @@
 const { increasedMeasurements } = require('../ejercicios/3');
 
-describe('Prueba 1', () => {
+describe('Prueba 3', () => {
   it('Should return null if the param provided is not an array', () => {
     const notAnArray = {};
 
@@ -13,6 +13,6 @@ describe('Prueba 1', () => {
       221, 236, 235, 236, 232, 224, 221, 228, 234, 226, 227, 228, 230, 232, 234,
     ];
 
-    expect(increasedMeasurements(array1)).toEqual(19);
+    expect(increasedMeasurements(array1)).toBe(19);
   });
 });

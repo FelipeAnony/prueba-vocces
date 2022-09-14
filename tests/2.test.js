@@ -1,6 +1,6 @@
 const { numbersTop } = require('../ejercicios/2');
 
-describe('Prueba 1', () => {
+describe('Prueba 2', () => {
   it('Should return null if the param provided is not an array', () => {
     const notAnArray = {};
 
