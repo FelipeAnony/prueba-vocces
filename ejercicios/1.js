@@ -10,7 +10,9 @@ function findUniq(array) {
    * función más robusta.
    * Podria hacer otras verificaciones, como si el array viene vazio por ejemplo,
    * pero juzgué innecesario hacerlo por el nombre de la funcion. Por su nombre, no tiene ningun
-   * sentido llamarla con un array vazio.
+   * sentido llamarla con un array vazio. Haciendo eso estamos de acuerdo com el principio 'KISS',
+   * al mantener las soluciones simples y con el YAGNI al no hacer algo que no se necesite aun,
+   * resultando en un codigo mas limpio y efectivo.
    **/
 
   if (!Array.isArray(array)) return null;
