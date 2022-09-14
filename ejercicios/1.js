@@ -8,6 +8,9 @@ function findUniq(array) {
    * sin embargo opté por realizarla para poder aprovechar los recursos de vscode
    * como los snippets y así mejorar la productividad, evitar errores y hacer la
    * función más robusta.
+   * Podria hacer otras verificaciones, como si el array viene vazio por ejemplo,
+   * pero juzgué innecesario hacerlo por el nombre de la funcion. Por su nombre, no tiene ningun
+   * sentido llamarla con un array vazio.
    **/
 
   if (!Array.isArray(array)) return null;
@@ -31,6 +34,7 @@ function findUniq(array) {
        * el expect en los dos casos.
        * Al no hacerlo, podrias pasar de parametro un array de numeros y recibir de return una string en
        * lugar de un numero, lo que, dependendo del caso, no estaria perfectamente correcto y obligaria al cliente a hacer validaciones.
+       * De esta forma, la funcion es mas confiable y previsible porque siempre retorna exactamente segun lo que tu le pasas de parametro.
        **/
 
       const originalArrayItem = array.find((e) => e == key);
