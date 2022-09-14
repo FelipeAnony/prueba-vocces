@@ -8,11 +8,7 @@ function numbersTop(array) {
   const itemsCount = {};
 
   array.forEach((e) => {
-    if (itemsCount[e]) {
-      itemsCount[e]++;
-    } else {
-      itemsCount[e] = 1;
-    }
+    itemsCount[e] ? itemsCount[e]++ : (itemsCount[e] = 1);
   });
 
   const sortedItemsCount = Object.values(itemsCount).sort((a, b) => b - a);
@@ -22,10 +18,8 @@ function numbersTop(array) {
     for (let key in itemsCount) {
       if (itemsCount[key] === e) {
         // Asi como en el ejercicio anterior, opté por utilizar find en el array
-        // original para mantener los tipos de datos originales y cumplir exactamente el expect,
-        // pero tambiem podria terminar de manera mas corta segun la necesidad.
-
-        mostRepeatedItems[i] = array.find((el) => el == key);
+        // original en lugar de hacer lo que seria mas obvio, por las mismas razones.
+        mostRepeatedItems[i] = array.find((el) => el == key); //ver comentario 1
       }
     }
   });
