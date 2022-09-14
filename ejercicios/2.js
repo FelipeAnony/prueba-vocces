@@ -16,7 +16,7 @@ function numbersTop(array) {
   });
 
   const sortedItemsCount = Object.values(itemsCount).sort((a, b) => b - a);
-  const mostRepeatedItens = [];
+  const mostRepeatedItems = [];
 
   sortedItemsCount.forEach((e, i) => {
     for (let key in itemsCount) {
@@ -25,12 +25,12 @@ function numbersTop(array) {
         // original para mantener los tipos de datos originales y cumplir exactamente el expect,
         // pero tambiem podria terminar de manera mas corta segun la necesidad
 
-        mostRepeatedItens[i] = array.find((el) => el == key);
+        mostRepeatedItems[i] = array.find((el) => el == key);
       }
     }
   });
 
-  return mostRepeatedItens.slice(0, 3);
+  return mostRepeatedItems.slice(0, 3);
 }
 
 /**

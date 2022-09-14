@@ -3,6 +3,11 @@
 // crea una función findUniq que retorne el elemento único.
 
 function findUniq(array) {
+  /** Técnicamente esta verificación abajo no es necesaria para que la función funcione,
+   *  sin embargo opté por realizarla para poder aprovechar los recursos de vscode
+   *  como los snippets y así mejorar la productividad, evitar errores y hacer la
+   *  función más robusta.
+   * **/
   if (!Array.isArray(array)) return null;
 
   const itemsCount = {};
