@@ -4,7 +4,6 @@
 
 function findUniq(array) {
   if (!Array.isArray(array)) return null; // ver comentario 1
-
   const itemsCount = {};
 
   array.forEach((e) => {
@@ -22,10 +21,12 @@ function findUniq(array) {
  * sin embargo, opté por realizarla para poder aprovechar los recursos de VS Code
  * como los snippets y así mejorar la productividad, evitar errores y hacer la
  * función más robusta.
- * Podría hacer otras verificaciones, como si el array viene vacío por ejemplo,
- * pero juzgué innecesario hacerlo por el nombre de la función. Por su nombre, no tiene ningún
- * sentido llamarla con un array vacío. Haciendo eso estamos de acuerdo con el principio 'KISS',
- * al mantener las soluciones simples y con el 'YAGNI' al no hacer algo que no se necesite aún,
+ * Podría hacer tambiem otras verificaciones, como si el array viene vacío por ejemplo,
+ * pero esta juzgué innecesaria hacerla por el nombre de la función. Por su nombre, no tiene ningún
+ * sentido llamarla con un array vacío y aun que eso pase el return seria undefined, lo que parece razonable.
+ * Otras verificaciones, como por ejemplo verificar que todos los elementos del
+ * array son válidos, no las hice para respectar y estar de acuerdo con el principio 'KISS',
+ * de mantener las soluciones simples y con el 'YAGNI' al no hacer algo que no se necesite aún,
  * resultando en un código más limpio y efectivo.
  **/
 

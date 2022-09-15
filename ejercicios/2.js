@@ -4,7 +4,6 @@
 
 function numbersTop(array) {
   if (!Array.isArray(array)) return null;
-
   const itemsCount = {};
 
   array.forEach((e) => {
@@ -19,7 +18,7 @@ function numbersTop(array) {
       if (itemsCount[key] === e) {
         // Asi como en el ejercicio anterior, opté por utilizar find en el array
         // original en lugar de hacer lo que seria mas obvio, por las mismas razones.
-        mostRepeatedItems[i] = array.find((el) => el == key); //ver comentario 1
+        mostRepeatedItems[i] = array.find((el) => el == key);
       }
     }
   });
