@@ -46,7 +46,7 @@ const renderIndividualUser = (id) => {
 
 const renderError = () => {
   usersContainer.innerHTML =
-    "<span class='users__error'>Lo sentimos! Ocurrió un error.</span>";
+    "<p class='users__error'>Lo sentimos! Ocurrió un error.</p>";
 };
 
 const loadUsers = async () => {
