@@ -1,6 +1,10 @@
 const usersContainer = document.getElementById('usersContainer');
 
 const HtmlToRender = [];
+
+// Opté por guardar los datos obtenidos por fetch en cache para evitar rehacer peticiones innecesarias al backend,
+// una vez que los datos no cambiam a cada nueva peticion. Al hacer eso, mejoramos el desempeño
+// como un todo de la pagina, además de mejorar la experiencia de usuarios con mala conexion a internet.
 let usersData = [];
 
 const addEventListenerAll = () => {
