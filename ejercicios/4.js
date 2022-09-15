@@ -20,3 +20,8 @@ showText2.text = 'Adiós';
 
 showText.init(); // Hola
 showText2.init(); // Adiós
+
+module.exports = {
+  showText,
+  showText2,
+};

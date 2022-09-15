@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --no-cache --runInBand --verbose",
     "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
