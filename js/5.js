@@ -1,6 +1,6 @@
 const usersContainer = document.getElementById('usersContainer');
 
-const HtmlToRender = [];
+let HtmlToRender = [];
 
 // Opté por guardar los datos obtenidos por fetch en cache para evitar rehacer peticiones innecesarias al backend,
 // una vez que los datos no cambiam a cada nueva peticion. Al hacer eso, mejoramos el desempeño
@@ -17,11 +17,10 @@ const addEventListenerAll = () => {
 
 const renderUsers = () => {
   if (HtmlToRender.length < 1) {
-    usersData.forEach((element, i) => {
-      HtmlToRender.push(
+    HtmlToRender = usersData.map(
+      (element, i) =>
         `<div class='users__individualUser'><span id='${i}' class='users__name'>${element.name}</span></div>`
-      );
-    });
+    );
   }
 
   usersContainer.innerHTML = HtmlToRender.join(' ');
