@@ -1,10 +1,6 @@
 const usersContainer = document.getElementById('usersContainer');
 
 let HtmlToRender = [];
-
-// Opté por guardar los datos obtenidos por fetch en cache para evitar rehacer peticiones innecesarias al backend,
-// una vez que los datos no cambiam a cada nueva peticion. Al hacer eso, mejoramos el desempeño
-// como un todo de la pagina, además de mejorar la experiencia de usuarios con mala conexion a internet.
 let usersData = [];
 
 const addEventListenerAll = () => {
@@ -52,8 +48,7 @@ const renderError = () => {
 const loadUsers = async () => {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    const usersList = await response.json();
-    usersData = [...usersList];
+    usersData = await response.json(); //ver comentario 1
     renderUsers();
   } catch (error) {
     renderError();
@@ -61,3 +56,8 @@ const loadUsers = async () => {
 };
 
 document.addEventListener('DOMContentLoaded', loadUsers);
+
+// Comentario 1
+// Opté por guardar los datos obtenidos por fetch en cache para evitar rehacer peticiones innecesarias al backend,
+// una vez que los datos no cambiam a cada nueva peticion. Al hacer eso, mejoramos el desempeño
+// como un todo de la pagina, además de mejorar la experiencia de usuarios con mala conexion a internet.
