@@ -2,7 +2,10 @@
 // Dada una matriz de N elementos repetidos,
 // crea una función numbersTop para obtener los tres elementos más repetidos ordenados de forma descendente por número de repeticiones.
 
-function numbersTop(array) {
+// con el parametro opcional amount, podemos cambiar la cantidad de elementos retornados. De esta manera, estamos de acuerdo con el
+// Open/Closed principle.
+
+function numbersTop(array, amount = 3) {
   if (!Array.isArray(array)) return null;
   const itemsCount = {};
 
@@ -22,7 +25,7 @@ function numbersTop(array) {
     mostRepeatedItems[i] = array.find((el) => el == sortedItemsCount[i]);
   });
 
-  return mostRepeatedItems.slice(0, 3);
+  return mostRepeatedItems.slice(0, amount);
 }
 
 /**
