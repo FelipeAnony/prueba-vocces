@@ -13,19 +13,13 @@ function numbersTop(array, amount = 3) {
     itemsCount[e] ? itemsCount[e]++ : (itemsCount[e] = 1);
   });
 
-  const sortedItemsCount = Object.keys(itemsCount).sort(
-    (a, b) => itemsCount[b] - itemsCount[a]
-  );
-
-  const mostRepeatedItems = [];
-
   // Asi como en el ejercicio anterior, opté por utilizar find en el array
-  // original en lugar de hacer lo que seria mas obvio, por las mismas razones.
-  sortedItemsCount.forEach((e, i) => {
-    mostRepeatedItems[i] = array.find((el) => el == sortedItemsCount[i]);
-  });
+  // original por las mismas razones, pero podriamos omitir el ultimo map de acuerdo con el caso
+  const sortedItemsCount = Object.keys(itemsCount)
+    .sort((a, b) => itemsCount[b] - itemsCount[a])
+    .map((e) => array.find((el) => e == el));
 
-  return mostRepeatedItems.slice(0, amount);
+  return sortedItemsCount.slice(0, amount);
 }
 
 /**
